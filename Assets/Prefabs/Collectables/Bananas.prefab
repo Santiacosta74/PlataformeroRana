@@ -120,6 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9838717b40ce7114f94ceb9bb965ab40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aumentoFuerzaSalto: 200
 --- !u!61 &8727600198655527745
 BoxCollider2D:
   m_ObjectHideFlags: 0

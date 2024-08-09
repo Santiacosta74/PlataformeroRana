@@ -8,13 +8,12 @@ public class Kiwi : Coleccionable
         if (collider.CompareTag("Player"))
         {
             Recoger();
-            AñadirVelocidad();
-            Destroy(gameObject); // Destruye el objeto al ser recogido
+            PowerUp powerUp = GetComponent<PowerUp>();
+            if (powerUp != null)
+            {
+                powerUp.AplicarEfecto();
+            }
+            Destroy(gameObject);
         }
-    }
-
-    private void AñadirVelocidad()
-    {
-        // Esta función añadirá velocidad de movimiento
     }
 }

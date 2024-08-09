@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: b879432fc242ecf4fa4ce897b65fbd4b
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - prefabPowerUpSaltoExtra: {fileID: 851174362735952061, guid: 77dafd50ef297a447b2c69a073548ab3, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

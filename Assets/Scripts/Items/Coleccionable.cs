@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace PlataformaRana.Items // Asegúrate de que el espacio de nombres sea correcto
+namespace PlataformaRana.Items
 {
     public class Coleccionable : MonoBehaviour
     {
@@ -14,6 +14,11 @@ namespace PlataformaRana.Items // Asegúrate de que el espacio de nombres sea cor
         public void Recoger()
         {
             // Implementa la lógica de recoger el coleccionable
+            PowerUp powerUp = ObtenerPowerUp();
+            if (powerUp != null)
+            {
+                powerUp.AplicarEfecto();
+            }
             Destroy(gameObject);
         }
     }

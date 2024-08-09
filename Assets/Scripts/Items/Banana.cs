@@ -8,7 +8,6 @@ public class Banana : Coleccionable
         if (collider.CompareTag("Player"))
         {
             Recoger();
-            Destroy(gameObject); // Destruye el objeto al ser recogido
         }
     }
 }

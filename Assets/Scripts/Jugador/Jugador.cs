@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Clase Jugador que hereda de la clase Personaje
 public class Jugador : Personaje
 {
-    [SerializeField] private GameObject pie; 
-    private float radioVerificacionSuelo = 0.06f; 
+    [SerializeField] private GameObject pie;
+    private float radioVerificacionSuelo = 0.06f;
 
     public new void Start()
     {
@@ -14,10 +13,17 @@ public class Jugador : Personaje
         velocidad = 1.9f;
         base.Start();
     }
+
     public void AgregarSaltoExtra(float aumentoFuerza)
     {
-        fuerzaSalto += aumentoFuerza; 
+        fuerzaSalto += aumentoFuerza;
     }
+
+    public void AgregarVelocidadExtra(float aumentoVelocidad)
+    {
+        velocidad += aumentoVelocidad;
+    }
+
     private void Update()
     {
         MovimientoHorizontal = Input.GetAxis("Horizontal");
