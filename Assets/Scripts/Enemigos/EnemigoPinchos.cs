@@ -11,6 +11,6 @@ public class EnemigoPinchos : Enemigo
 
     void MovimientoAleatorio()
     {
-        // El enemigo se moverá de forma vertical u horizontal de forma aleatoria
+ 
     }
 }

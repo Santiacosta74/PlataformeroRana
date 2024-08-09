@@ -13,7 +13,6 @@ namespace PlataformaRana.Items
 
         public void Recoger()
         {
-            // Implementa la lógica de recoger el coleccionable
             PowerUp powerUp = ObtenerPowerUp();
             if (powerUp != null)
             {

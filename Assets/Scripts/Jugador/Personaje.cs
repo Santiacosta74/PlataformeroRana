@@ -11,7 +11,7 @@ public class Personaje : MonoBehaviour
     protected Rigidbody2D rb2D;
     protected bool enSuelo;
 
-    // Obtener y establecer el movimiento horizontal, lo mismo con el salto
+
     public float MovimientoHorizontal { get; protected set; }
     public bool Saltando { get; protected set; }
 

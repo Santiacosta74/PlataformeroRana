@@ -5,7 +5,6 @@ namespace PlataformaRana.UI
 {
     public class UIController : MonoBehaviour
     {
-        // Referencia al objeto Coin en la escena
         public Coin coin;
 
         void OnEnable()
@@ -26,7 +25,6 @@ namespace PlataformaRana.UI
 
         void ActualizarPuntuacion()
         {
-            // Implementa la lógica para actualizar la puntuación
             Debug.Log("Puntuación actualizada");
         }
     }

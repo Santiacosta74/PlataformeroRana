@@ -7,7 +7,7 @@ public class Jugador : Personaje, IDamageable
     [SerializeField] private GameObject pie;
     private float radioVerificacionSuelo = 0.06f;
 
-    public int salud = 100; // Agrega una variable para la salud del jugador
+    public int salud = 100; 
 
     public new void Start()
     {
@@ -28,7 +28,7 @@ public class Jugador : Personaje, IDamageable
 
     public void TakeDamage(int amount)
     {
-        salud -= amount; // Resta la cantidad de daño a la salud
+        salud -= amount; 
         Debug.Log($"Jugador recibió {amount} de daño. Salud restante: {salud}");
 
         if (salud <= 0)
@@ -39,10 +39,10 @@ public class Jugador : Personaje, IDamageable
 
     private void Muerte()
     {
-        // Implementa la lógica de muerte del jugador aquí
+
         Debug.Log("Jugador ha muerto.");
-        // Aquí puedes desactivar el jugador, mostrar una pantalla de Game Over, etc.
-        gameObject.SetActive(false); // Ejemplo de desactivar el GameObject del jugador
+
+        gameObject.SetActive(false); 
     }
 
     private void Update()

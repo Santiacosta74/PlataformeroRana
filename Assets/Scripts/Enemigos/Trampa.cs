@@ -6,7 +6,7 @@ public class Trampa : MonoBehaviour
     {
         if (collision.collider.CompareTag("Player"))
         {
-            Destroy(collision.collider.gameObject); // Destruye el objeto jugador
+            Destroy(collision.collider.gameObject); 
         }
     }
 }
