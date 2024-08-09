@@ -1,18 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class AnimacionesJugador : MonoBehaviour
 {
-    GestionJugador gestion;
-    MovimientoJugador movimiento;
-    Rigidbody2D rb;
-    Animator animador;
-    SpriteRenderer sprite;
+    public UnityEvent onRun;
+    public UnityEvent onJump;
+    public UnityEvent onTakeDamage;
+
+    private MovimientoJugador movimiento;
+    private Rigidbody2D rb;
+    private Animator animador;
+    private SpriteRenderer sprite;
 
     private void Start()
     {
-        gestion = GetComponent<GestionJugador>();
         movimiento = GetComponent<MovimientoJugador>();
         animador = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
@@ -30,6 +31,7 @@ public class AnimacionesJugador : MonoBehaviour
         if (movimiento.movimientoHorizontal != 0)
         {
             animador.SetFloat("xVelocity", movimiento.movimientoHorizontal);
+            onRun.Invoke();
         }
     }
 
@@ -39,12 +41,14 @@ public class AnimacionesJugador : MonoBehaviour
         if (movimiento.saltando)
         {
             animador.SetFloat("yVelocity", rb.velocity.y);
+            onJump.Invoke();
         }
     }
 
     public void Daño()
     {
-        animador.SetTrigger("estaDañado");
+        animador.SetTrigger("estaDaño");
+        onTakeDamage.Invoke();
     }
 
     public void DeshabilitarSprite()

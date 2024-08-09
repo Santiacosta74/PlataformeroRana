@@ -1,24 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Coleccionable : MonoBehaviour
+namespace PlataformaRana.Items // Asegúrate de que el espacio de nombres sea correcto
 {
-    Animator animador;
-
-    protected virtual void Start()
+    public class Coleccionable : MonoBehaviour
     {
-        animador = GetComponent<Animator>();
-    }
+        public PowerUp powerUp;
 
-    protected void Recoger()
-    {
-        animador.SetTrigger("Recogido");
-        Desaparecer();
-    }
+        public PowerUp ObtenerPowerUp()
+        {
+            return powerUp;
+        }
 
-    public void Desaparecer()
-    {
-        Destroy(gameObject);
+        public void Recoger()
+        {
+            // Implementa la lógica de recoger el coleccionable
+            Destroy(gameObject);
+        }
     }
 }

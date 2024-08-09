@@ -2,23 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// esta clase base será para todos los personajes del juego
+// Esta clase base será para todos los personajes del juego
 public class Personaje : MonoBehaviour
 {
-    protected float fuerzaSalto; 
-    protected float velocidad; 
+    protected float fuerzaSalto;
+    protected float velocidad;
 
-    protected Rigidbody2D rb2D; 
-    protected bool enSuelo; 
+    protected Rigidbody2D rb2D;
+    protected bool enSuelo;
 
-    // obtener y establecer el movimiento horizontal, lo mismo con el salto
+    // Obtener y establecer el movimiento horizontal, lo mismo con el salto
     public float MovimientoHorizontal { get; protected set; }
     public bool Saltando { get; protected set; }
 
-
     protected virtual void Start()
     {
-        rb2D = GetComponent<Rigidbody2D>(); 
+        rb2D = GetComponent<Rigidbody2D>();
     }
 
     protected void Mover(float direccion)
@@ -34,7 +33,7 @@ public class Personaje : MonoBehaviour
         }
     }
 
-    // para rotar al personaje según la dirección del movimiento
+    // Para rotar al personaje según la dirección del movimiento
     protected void Rotar(float direccion)
     {
         if (direccion < 0)
@@ -47,7 +46,7 @@ public class Personaje : MonoBehaviour
         }
     }
 
-    // para verificar si el personaje está en el suelo
+    // Para verificar si el personaje está en el suelo
     protected void VerificarSuelo(GameObject pie, float radioVerificacionSuelo)
     {
         int layerMask = 1 << 7;

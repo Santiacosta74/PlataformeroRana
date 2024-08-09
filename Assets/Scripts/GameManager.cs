@@ -1,35 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class GestorJuego : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
-    [SerializeField] GameObject fin;
-    public int contadorObjetos;
+    public UnityEvent onBuscarColeccionables;
 
     private void Start()
     {
-        BuscarColeccionables();
-    }
-
-    private void FixedUpdate()
-    {
-        BuscarColeccionables();
+        if (onBuscarColeccionables == null)
+            onBuscarColeccionables = new UnityEvent();
     }
 
     public void BuscarColeccionables()
     {
-        GameObject[] objetosEncontrados = GameObject.FindGameObjectsWithTag("Collectible");
-        contadorObjetos = objetosEncontrados.Length;
-
-        if (contadorObjetos == 0)
-        {
-            ActivarFin();
-        }
+        Debug.Log("Buscando coleccionables...");
+        // Implementa la lógica para buscar coleccionables en la escena
     }
 
-    void ActivarFin()
+    public void InvocarBuscarColeccionables()
     {
-        fin.SetActive(true);
+        onBuscarColeccionables.Invoke();
     }
 }

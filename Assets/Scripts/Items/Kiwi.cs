@@ -1,13 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
+using PlataformaRana.Items;
 using UnityEngine;
 
 public class Kiwi : Coleccionable
 {
-    private void OnCollisionEnter2D(Collision2D colision)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        Recoger();
-        AñadirVelocidad();
+        if (collider.CompareTag("Player"))
+        {
+            Recoger();
+            AñadirVelocidad();
+            Destroy(gameObject); // Destruye el objeto al ser recogido
+        }
     }
 
     private void AñadirVelocidad()

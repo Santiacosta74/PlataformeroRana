@@ -23,20 +23,16 @@ public class MovimientoJugador : MonoBehaviour
 
     private void Update()
     {
-        {
-            movimientoHorizontal = Input.GetAxis("Horizontal");
-            rb2D.velocity = new Vector2(movimientoHorizontal * velocidad, rb2D.velocity.y);
+        movimientoHorizontal = Input.GetAxis("Horizontal");
+        rb2D.velocity = new Vector2(movimientoHorizontal * velocidad, rb2D.velocity.y);
 
-            RotarHaciaDireccionMovimiento(movimientoHorizontal);
-        } // movimiento
+        RotarHaciaDireccionMovimiento(movimientoHorizontal);
+        EstaEnSuelo();
 
+        if (Input.GetButtonDown("Jump") && enSuelo)
         {
-            EstaEnSuelo();
-            if (Input.GetButtonDown("Jump") && enSuelo)
-            {
-                rb2D.velocity = new Vector2(rb2D.velocity.x, fuerzaSalto);
-            }
-        } // acción de salto
+            rb2D.velocity = new Vector2(rb2D.velocity.x, fuerzaSalto);
+        }
     }
 
     private void EstaEnSuelo()
@@ -45,7 +41,7 @@ public class MovimientoJugador : MonoBehaviour
         Collider2D[] colliders = Physics2D.OverlapCircleAll(pie.transform.position, radioVerificacionSuelo, layerMask);
         enSuelo = colliders.Length > 0;
         saltando = !enSuelo;
-    } // verifica si el jugador está en el suelo o no
+    }
 
     private void RotarHaciaDireccionMovimiento(float movimientoHorizontal)
     {
@@ -57,5 +53,5 @@ public class MovimientoJugador : MonoBehaviour
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);
         }
-    } // rota el jugador hacia la dirección del movimiento
+    }
 }
